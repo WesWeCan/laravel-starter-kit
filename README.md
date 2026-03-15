@@ -1,16 +1,16 @@
 ## Laravel + Inertia + Vue 3 Starter Kit (TypeScript, Ziggy, SCSS)
 
-This is a Laravel 12 starter configured for a Vue 3 + Inertia app with TypeScript, Ziggy route helpers, axios, and SCSS via Vite.
+This is a Laravel 12 starter configured for a Vue 3 + Inertia app with TypeScript, Ziggy route helpers, axios, SCSS via Vite, and Laravel Dusk for E2E coverage.
 
 ### Stack
 - **Backend**: Laravel 12, Inertia Laravel adapter
 - **Frontend**: Vue 3 with **script setup** and **TypeScript**
-- **Bundler**: Vite 7 + `laravel-vite-plugin`
+- **Bundler**: Vite 8 + `laravel-vite-plugin`
 - **Dev tools**: `vite-plugin-vue-devtools`
 - **Routing helpers**: Ziggy (`@routes` in Blade, `ZiggyVue` in Vue)
 - **HTTP**: Axios pre-configured in `bootstrap.ts`
 - **Styles**: SCSS (global styles only; no styles inside SFCs)
-- **Testing**: Pest
+- **Testing**: Pest + Laravel Dusk
 - **DX**: Laravel Pail (pretty app logs) and a queue worker wired in the dev script
 
 ### Project layout (key files)
@@ -51,7 +51,9 @@ php artisan serve
 yarn dev
 ```
 
-Alternatively, a single command exists via Composer (spawns server, queue worker, pail logs, and Vite). Note: it uses npm internally for the Vite task.
+If you use Valet, you can skip `php artisan serve` and just run `yarn dev`.
+
+Alternatively, a single command exists via Composer (spawns server, queue worker, pail logs, and Vite).
 ```bash
 composer run dev
 ```
@@ -64,6 +66,22 @@ yarn build
 ### Tests
 ```bash
 composer test
+```
+
+### Browser tests (Laravel Dusk)
+Use Valet with the secured local domain from `.env.dusk.local`:
+```bash
+cp .env.dusk.local.example .env.dusk.local
+php artisan key:generate --env=dusk.local
+yarn dev
+composer run dusk
+```
+
+- Default Dusk URL: `https://laravel-starter-kit.test`
+- Default Dusk database: `laravel_testing`
+- If Chrome updates locally, sync the driver with:
+```bash
+composer run dusk:detect-chromedriver
 ```
 
 ### Type checking
