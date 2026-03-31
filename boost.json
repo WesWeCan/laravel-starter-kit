@@ -3,11 +3,11 @@
         "cursor"
     ],
     "guidelines": true,
-    "herd_mcp": true,
     "mcp": true,
     "nightwatch_mcp": false,
     "sail": false,
     "skills": [
+        "laravel-best-practices",
         "pest-testing",
         "inertia-vue-development"
     ]
