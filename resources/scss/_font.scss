@@ -1,0 +1,205 @@
+@use './variables';
+
+
+@import url(https://fonts.bunny.net/css?family=noto-sans:100,100i,300,300i,500,500i,700,700i,900,900i);
+
+
+html {
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;    
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h6 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+em, i {
+    font-style: italic;
+}
+
+small {
+    font-size: 0.875rem;
+}
+
+mark {
+    background-color: #ffdd00;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+
+// Deleted text
+del {
+    text-decoration: line-through;
+    background-color: #ff0000;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+// Inserted text
+ins {
+    text-decoration: underline;
+    background-color: #00ff00;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+sub {
+    font-size: 0.875rem;
+    vertical-align: sub;
+}
+
+sup {
+    font-size: 0.875rem;
+    vertical-align: super;
+}
+
+abbr {
+    text-decoration: dotted underline;
+    cursor: help;
+}
+
+// Keyboard input
+kbd {
+    background-color: #c4c4c4;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+}
+
+code, samp {
+    background-color: #c4c4c4;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+}
+
+
+
+blockquote {
+    border-left: 4px solid #c4c4c4;
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+
+pre {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    word-break: break-all;
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #c4c4c4;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 1rem;
+}
+
+ol {
+    list-style: decimal;
+    margin-left: 1rem;
+}
+
+dl {
+    margin-left: 1rem;
+}
+
+dt {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+dd {
+    margin-left: 1rem;
+}
+
+address {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: variables.$link-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: none;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+

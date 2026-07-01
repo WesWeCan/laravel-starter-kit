@@ -1,5 +1,12 @@
 @use './variables';
 
+
+@use './font';
+@use './form';
+@use './table';
+@use './misc';
+@use './layout';
+
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +15,5 @@
 
 body {
     background-color: variables.$background-color;
+    padding: 1rem;
 }

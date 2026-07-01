@@ -10,7 +10,7 @@
         "@inertiajs/vue3": "^3",
         "@vitejs/plugin-vue": "^6",
         "axios": "^1",
-        "concurrently": "^9",
+        "concurrently": "^10",
         "laravel-vite-plugin": "^3",
         "sass": "^1",
         "typescript": "^6",
