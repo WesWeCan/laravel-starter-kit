@@ -1,17 +1,7 @@
-@use './variables';
-
-
-@use './font';
-@use './form';
-@use './table';
-@use './misc';
+@use './baseline/variables';
+@use './baseline/base';
 @use './layout';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     background-color: variables.$background-color;

@@ -1,0 +1,11 @@
+@use './font';
+@use './form';
+@use './table';
+@use './misc';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
