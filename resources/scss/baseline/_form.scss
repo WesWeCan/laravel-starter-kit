@@ -1,4 +1,10 @@
+@use 'sass:color';
 @use './variables';
+
+// Opt-in list: input types not named here stay unstyled instead of inheriting the text-field look.
+$text-inputs: ':not([type])', '[type="text"]', '[type="email"]', '[type="password"]',
+    '[type="search"]', '[type="number"]', '[type="tel"]', '[type="url"]',
+    '[type="date"]', '[type="datetime-local"]', '[type="time"]', '[type="month"]', '[type="week"]';
 
 @mixin control-button {
     padding: 0.25rem 1rem;
@@ -10,16 +16,16 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: darken(variables.$background-color, 5%);
+        background-color: color.adjust(variables.$background-color, $lightness: -5%);
     }
 
     &:disabled {
-        background-color: darken(variables.$background-color, 6%);
+        background-color: color.adjust(variables.$background-color, $lightness: -6%);
         cursor: not-allowed;
     }
 }
 
-button, input[type="submit"], input[type="reset"] {
+button, input[type="button"], input[type="submit"], input[type="reset"] {
     @include control-button;
 
     width: max-content;
@@ -88,7 +94,7 @@ fieldset {
 }
 
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), textarea, select {
+input:is(#{$text-inputs}), textarea, select {
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     border: 1px solid variables.$border-color;
@@ -104,16 +110,16 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="file"]), textarea, s
     }
 
     &:disabled {
-        background-color: darken(variables.$background-color, 6%);
+        background-color: color.adjust(variables.$background-color, $lightness: -6%);
         cursor: not-allowed;
     }
 
     &:read-only {
-        background-color: darken(variables.$background-color, 6%);
+        background-color: color.adjust(variables.$background-color, $lightness: -6%);
         cursor: not-allowed;
     }
 
-   
+
 
 }
 
@@ -218,11 +224,11 @@ input[type="file"] {
     }
 
     &:disabled {
-        background-color: darken(variables.$background-color, 6%);
+        background-color: color.adjust(variables.$background-color, $lightness: -6%);
         cursor: not-allowed;
 
         &::file-selector-button {
-            background-color: darken(variables.$background-color, 6%);
+            background-color: color.adjust(variables.$background-color, $lightness: -6%);
             cursor: not-allowed;
         }
     }
