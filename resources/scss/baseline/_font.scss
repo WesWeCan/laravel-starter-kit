@@ -6,7 +6,7 @@
 
 html {
     font-size: 16px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: var(--font-body);
 }
 
 h1 {
@@ -71,7 +71,7 @@ small {
 }
 
 mark {
-    background-color: #ffdd00;
+    background-color: var(--color-yellow);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     border-radius: 0.25rem;
@@ -81,7 +81,7 @@ mark {
 // Deleted text
 del {
     text-decoration: line-through;
-    background-color: #ff0000;
+    background-color: var(--color-red);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     border-radius: 0.25rem;
@@ -90,7 +90,7 @@ del {
 // Inserted text
 ins {
     text-decoration: underline;
-    background-color: #00ff00;
+    background-color: var(--color-green);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     border-radius: 0.25rem;
@@ -113,25 +113,25 @@ abbr {
 
 // Keyboard input
 kbd {
-    background-color: #c4c4c4;
+    background-color: var(--color-grey);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     border-radius: 0.25rem;
-    font-family: monospace;
+    font-family: var(--font-mono);
 }
 
 code, samp {
-    background-color: #c4c4c4;
+    background-color: var(--color-grey);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     border-radius: 0.25rem;
-    font-family: monospace;
+    font-family: var(--font-mono);
 }
 
 
 
 blockquote {
-    border-left: 4px solid #c4c4c4;
+    border-left: 4px solid var(--border-color);
     padding-left: 1rem;
     margin-left: 1rem;
 }
@@ -140,7 +140,7 @@ blockquote {
 pre {
     padding: 1rem;
     border-radius: 0.25rem;
-    font-family: monospace;
+    font-family: var(--font-mono);
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -152,7 +152,7 @@ pre {
 
 hr {
     border: 0;
-    border-top: 1px solid #c4c4c4;
+    border-top: 1px solid var(--border-color);
     margin: 1rem 0;
     width: 100%;
 }
@@ -186,7 +186,7 @@ address {
 }
 
 a {
-    color: variables.$link-color;
+    color: var(--link-color);
     text-decoration: none;
 
     &:hover {

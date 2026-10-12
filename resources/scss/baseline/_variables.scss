@@ -1,11 +1,21 @@
-$background-color: #f0f0f0;
+@use 'sass:color';
 
+/**
+ * @canonical The palette. One entry here becomes --color-<name>, its
+ * -dark shade and a [data-color] band. Components read the custom
+ * properties, never these values.
+ */
+$colors: (
+    "white": #ffffff,
+    "light": #f0f0f0,
+    "grey": #c4c4c4,
+    "black": #000000,
+    "blue": #007bff,
+    "yellow": #ffdd00,
+    "red": #ff0000,
+    "green": #00ff00,
+);
 
-$link-color: #007bff;
-$border-color: #c4c4c4;
-
-
-$text-color: #000000;
 
 
 $side-padding: 1rem;
@@ -17,3 +27,31 @@ $content-width: 900px;
  * content at rest. Only true when the element is full band width (.bleed).
  */
 $content-gutter: max(#{$side-padding}, (100% - #{$content-width}) / 2);
+
+// The only two breakpoints. Media queries use these, never a literal width.
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;
+
+
+
+// Roles point at the palette so a band can re-theme its contents by overriding one property.
+:root {
+    @each $name, $value in $colors {
+        --color-#{$name}: #{$value};
+        --color-#{$name}-dark: #{color.scale($value, $lightness: -6%)};
+    }
+
+    --text-color: var(--color-black);
+    --border-color: var(--color-grey);
+    --background-color: var(--color-light);
+    --link-color: var(--color-blue);
+
+    --font-body: 'Noto Sans', sans-serif;
+    --font-mono: monospace;
+}
+
+@each $name, $value in $colors {
+    [data-color="#{$name}"] {
+        background-color: var(--color-#{$name});
+    }
+}

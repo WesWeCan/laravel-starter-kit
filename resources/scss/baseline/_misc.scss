@@ -6,7 +6,7 @@ figure {
     gap: 0.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid variables.$border-color;
+    border: 1px solid var(--border-color);
     border-radius: 0.25rem;
 
     img {
@@ -26,7 +26,7 @@ figure {
 
 details {
     margin-bottom: 1rem;
-    border: 1px solid variables.$border-color;
+    border: 1px solid var(--border-color);
     border-radius: 0.25rem;
     overflow: hidden;
 
@@ -49,12 +49,12 @@ details {
         }
 
         &:hover {
-            background-color: variables.$background-color;
+            background-color: var(--background-color);
         }
     }
 
     &[open] summary {
-        border-bottom: 1px solid variables.$border-color;
+        border-bottom: 1px solid var(--border-color);
 
         &::before {
             transform: rotate(90deg);
