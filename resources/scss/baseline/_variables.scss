@@ -6,3 +6,14 @@ $border-color: #c4c4c4;
 
 
 $text-color: #000000;
+
+
+$side-padding: 1rem;
+$content-width: 900px;
+
+/**
+ * @canonical Distance from the screen edge to the content column.
+ * A bleeding scroller pads and scroll-pads with this so it lines up with the
+ * content at rest. Only true when the element is full band width (.bleed).
+ */
+$content-gutter: max(#{$side-padding}, (100% - #{$content-width}) / 2);
