@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
-import AllElements from '@/Components/AllElements.vue';
+import AllElements from '@/Components/Showcase/AllElements.vue';
 import BasicLayout from '@/Layouts/BasicLayout.vue';
+import type { ProfileDefaults } from '@/types/showcase';
 
 defineProps<{
-    profileDefaults: {
-        display_name: string;
-        bio: string;
-    };
+    profileDefaults: ProfileDefaults;
 }>();
 </script>
 

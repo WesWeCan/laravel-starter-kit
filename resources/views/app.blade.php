@@ -7,19 +7,13 @@
 
     <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=crimson-pro:200,200i,500,500i|inter-tight:100,100i,300,300i,500,500i"
-        rel="stylesheet" />
-
-    <!-- Scripts -->
-
+    @fonts
     @routes
     @vite(['resources/js/app.ts', "resources/js/Pages/{$page['component']}.vue"])
     @inertiaHead
 </head>
 
-<body class="font-sans antialiased">
+<body>
     @inertia
 </body>
 

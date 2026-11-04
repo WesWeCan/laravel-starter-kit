@@ -46,7 +46,7 @@ $breakpoint-mobile: 768px;
     --background-color: var(--color-light);
     --link-color: var(--color-blue);
 
-    --font-body: 'Noto Sans', sans-serif;
+    // --font-body comes from @fonts (vite.config.js, alias "body").
     --font-mono: monospace;
 }
 

@@ -1,6 +1,6 @@
 {
     "agents": [
-        "cursor"
+        "claude_code"
     ],
     "cloud": false,
     "guidelines": true,
@@ -8,8 +8,9 @@
     "nightwatch": false,
     "sail": false,
     "skills": [
+        "infer-conventions",
         "laravel-best-practices",
-        "pest-testing",
+        "testing-best-practices",
         "inertia-vue-development"
     ]
 }

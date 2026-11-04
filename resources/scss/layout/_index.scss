@@ -1,0 +1,33 @@
+@use '../baseline/variables';
+
+/**
+ * @canonical Full-bleed band grid.
+ * Every band (section, header) is this grid. Children land in the centered
+ * content column by default; a child opts out with .bleed or .bleed-left.
+ * Never center content with a wrapper, the grid does that.
+ * A nested section is not a band and must never become a grid.
+ */
+section:not(section section),
+.layout-header,
+.layout-footer {
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(variables.$side-padding, 1fr)
+        [content-start] minmax(0, variables.$content-width)
+        [content-end] minmax(variables.$side-padding, 1fr)
+        [full-end];
+    row-gap: 1rem;
+    padding-block: 1rem;
+
+    > * {
+        grid-column: content;
+    }
+}
+
+.bleed {
+    grid-column: full;
+}
+
+.bleed-left {
+    grid-column: full-start / content-end;
+}

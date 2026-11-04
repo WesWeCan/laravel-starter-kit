@@ -6,6 +6,7 @@ use App\Http\Requests\Showcase\StoreContactRequest;
 use App\Http\Requests\Showcase\StoreRegistrationRequest;
 use App\Http\Requests\Showcase\StoreUploadRequest;
 use App\Http\Requests\Showcase\UpdateProfileRequest;
+use App\Http\Resources\Showcase\ProfileDefaultsResource;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -15,10 +16,10 @@ class ShowcaseController extends Controller
     public function index(): Response
     {
         return Inertia::render('Showcase', [
-            'profileDefaults' => [
+            'profileDefaults' => (new ProfileDefaultsResource([
                 'display_name' => 'Dominus',
                 'bio' => 'Starter kit profile bio.',
-            ],
+            ]))->resolve(),
         ]);
     }
 

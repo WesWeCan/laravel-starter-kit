@@ -5,7 +5,8 @@ $text-inputs: ':not([type])', '[type="text"]', '[type="email"]', '[type="passwor
     '[type="search"]', '[type="number"]', '[type="tel"]', '[type="url"]',
     '[type="date"]', '[type="datetime-local"]', '[type="time"]', '[type="month"]', '[type="week"]';
 
-@mixin control-button {
+// A pseudo-element can't carry :disabled, so ::file-selector-button opts out and is styled from input:disabled instead.
+@mixin control-button($with-disabled-state: true) {
     padding: 0.25rem 1rem;
     border-radius: 0.25rem;
     border: 1px solid var(--border-color);
@@ -18,9 +19,11 @@ $text-inputs: ':not([type])', '[type="text"]', '[type="email"]', '[type="passwor
         background-color: var(--color-light-dark);
     }
 
-    &:disabled {
-        background-color: var(--color-light-dark);
-        cursor: not-allowed;
+    @if $with-disabled-state {
+        &:disabled {
+            background-color: var(--color-light-dark);
+            cursor: not-allowed;
+        }
     }
 }
 
@@ -215,7 +218,7 @@ input[type="file"] {
     transition: all 0.3s ease;
 
     &::file-selector-button {
-        @include control-button;
+        @include control-button($with-disabled-state: false);
 
         margin-right: 0.75rem;
         border-top-right-radius: 0;
