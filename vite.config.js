@@ -21,7 +21,8 @@ export default defineConfig({
                 }),
             ],
         }),
-        inertia(),
+        // Client-only on purpose: the plugin otherwise renders pages through the dev server's SSR endpoint.
+        inertia({ ssr: false }),
         vue({
             template: {
                 transformAssetUrls: {

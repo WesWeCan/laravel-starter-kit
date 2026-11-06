@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
 use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Client-only app: inertia-laravel enables SSR by default and would call Vite's SSR endpoint while hot.
+        Inertia::disableSsr();
     }
 }

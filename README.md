@@ -5,7 +5,7 @@ This is a Laravel 13 starter configured for a Vue 3 + Inertia v3 app with TypeSc
 ### Stack
 - **Backend**: Laravel 13, Inertia Laravel adapter v3
 - **Frontend**: Vue 3 with **script setup** and **TypeScript**
-- **Bundler**: Vite 8 + `laravel-vite-plugin` + `@inertiajs/vite` (page resolution, SSR-ready)
+- **Bundler**: Vite 8 + `laravel-vite-plugin` + `@inertiajs/vite` (page resolution; SSR disabled)
 - **Fonts**: Noto Sans, self-hosted at build time through `laravel-vite-plugin/fonts` and `@fonts`
 - **Dev tools**: `vite-plugin-vue-devtools`
 - **Routing helpers**: Ziggy (`@routes` in Blade, `ZiggyVue` in Vue)
@@ -108,4 +108,4 @@ Before starting a new project, ask Claude Code to refresh the starter kit. The `
 
 ### What's included vs. not
 - Included: Vue 3 + TS, Inertia v3, Ziggy, SCSS, self-hosted fonts, Axios, Vite, Vue DevTools, Pest, Dusk, Pail, Boost, queue worker in dev.
-- Not included: SSR (`@inertiajs/vite` makes it a small step), authentication scaffolding, ESLint/Prettier config.
+- Not included: SSR (switched off in `vite.config.js` and `AppServiceProvider`), authentication scaffolding, ESLint/Prettier config.
